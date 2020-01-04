@@ -29,6 +29,7 @@ $ python -m ipykernel install --user --name {conda_env} \
 --display-name "Python ({conda_env})"
 """
 
+
 CHANNELS = ["defaults", "conda-forge", "pytorch"]
 
 CONDA_BASE = {
@@ -47,7 +48,9 @@ CONDA_BASE = {
     "tensorflow-hub": "tensorflow-hub==0.5.0",
     "py-xgboost": "py-xgboost<=0.80",
     "dask": "dask[dataframe]==1.2.2",
+    "papermill": "papermill>=1.0.1",
 }
+
 CONDA_GPU = {
     "numba": "numba>=0.38.1",
     "pytorch": "pytorch>=1.0.0",
@@ -61,15 +64,14 @@ PIP_BASE = {
     "azureml-train-automl": "azureml-train-automl==1.0.57",
     "azureml-dataprep": "azureml-dataprep==1.1.8",
     "azureml-widgets": "azureml-widgets==1.0.57",
-    "azureml-mlflow": "azureml-mlflow>=1.0.43.1",
+    "azureml-mlflow": "azureml-mlflow==1.0.57",
     "black": "black>=18.6b4",
     "cached-property": "cached-property==1.5.1",
-    "papermill": "papermill>=1.0.1",
+    "jsonlines": "jsonlines>=1.2.0",
     "nteract-scrapbook": "nteract-scrapbook>=0.2.1",
     "pydocumentdb": "pydocumentdb>=2.3.3",
     "pytorch-pretrained-bert": "pytorch-pretrained-bert>=0.6",
-    "pytorch-transformers": "pytorch-transformers>=1.2.0",
-    "tqdm": "tqdm==4.31.1",
+    "tqdm": "tqdm==4.32.2",
     "pyemd": "pyemd==0.5.1",
     "ipywebrtc": "ipywebrtc==0.4.3",
     "pre-commit": "pre-commit>=1.14.4",
@@ -81,11 +83,12 @@ PIP_BASE = {
         "https://github.com/explosion/spacy-models/releases/download/"
         "en_core_web_sm-2.1.0/en_core_web_sm-2.1.0.tar.gz"
     ),
+    "transformers": "transformers>=2.1.1",
     "gensim": "gensim>=3.7.0",
     "nltk": "nltk>=3.4",
     "seqeval": "seqeval>=0.0.12",
-    "allennlp": "allennlp>=0.8.4",
 }
+
 PIP_GPU = {}
 
 PIP_DARWIN = {}

@@ -1,3 +1,6 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License.
+
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
 from __future__ import absolute_import
@@ -26,7 +29,7 @@ setup(
     ),
     author=AUTHOR,
     author_email="teamsharat@microsoft.com",
-    url="https://github.com/microsoft/nlp",
+    url="https://github.com/microsoft/nlp-recipes",
     packages=["utils_nlp"],
     include_package_data=True,
     zip_safe=True,
@@ -53,10 +56,16 @@ setup(
         "Intended Audience :: Telecommunications Industry",
     ],
     project_urls={
-        "Documentation": "https://github.com/microsoft/nlp/",
-        "Issue Tracker": "https://github.com/microsoft/nlp/issues",
+        "Documentation": "https://github.com/microsoft/nlp-recipes/",
+        "Issue Tracker": "https://github.com/microsoft/nlp-recipes/issues",
     },
-    keywords=["Microsoft NLP", "Natural Language Processing", "Text Processing", "Word Embedding"],
+    keywords=[
+        "Microsoft NLP",
+        "NLP Recipes",
+        "Natural Language Processing",
+        "Text Processing",
+        "Word Embedding",
+    ],
     python_requires=">=3.6",
     install_requires=[],
     dependency_links=[],

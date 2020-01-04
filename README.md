@@ -31,7 +31,7 @@ The repository aims to expand NLP capabilities along three separate dimensions
 We aim to have end-to-end examples of common tasks and scenarios such as text classification, named entity recognition etc.
 
 ### Algorithms
-We aim to support multiple models for each of the supported scenarios. Currently, BERT-based models are supported across most scenarios. We are working to integrate [pytorch-transformers](https://github.com/huggingface/pytorch-transformers) to allow use of many more models.
+We aim to support multiple models for each of the supported scenarios. Currently, transformer-based models are supported across most scenarios. We have been working on integrating the [transformers package](https://github.com/huggingface/transformers) from [Hugging Face](https://huggingface.co/) which allows users to easily load pretrained models and fine-tune them for different tasks.
 
 ### Languages 
 We strongly subscribe to the multi-language principles laid down by ["Emily Bender"](http://faculty.washington.edu/ebender/papers/Bender-SDSS-2019.pdf)
@@ -48,13 +48,13 @@ The following is a summary of the commonly used NLP scenarios covered in the rep
 
 | Scenario                              |  Models | Description|Languages|
 |-------------------------|  ------------------- |-------|---|
-|Text Classification                     |BERT <br> XLNet| Text classification is a supervised learning method of learning and predicting the category or the class of a document given its text content. |English, Hindi, Arabic|
+|Text Classification                     |BERT, XLNet, RoBERTa| Text classification is a supervised learning method of learning and predicting the category or the class of a document given its text content. |English, Hindi, Arabic|
 |Named Entity Recognition                |BERT| Named entity recognition (NER) is the task of classifying words or key phrases of a text into predefined entities of interest. |English|
-|Entailment                              |BERT| Textual entailment is the task of classifying the binary relation between two natural-language texts,  ‘text’ and ‘hypothesis’,  to determine if the `text' agrees with the `hypothesis` or not. |English|
-|Question Answering                      |BiDAF <br> BERT| Question answering (QA) is the task of retrieving or generating a valid answer for a given query in natural language, provided with a passage related to the query. |English|
-|Sentence Similarity                     |Representation: TF-IDF, Word Embeddings, Doc Embeddings<br>Metrics: Cosine Similarity, Word Mover's Distance<br>Models: BERT, GenSen| Sentence similarity is the process of computing a similarity score given a pair of text documents. |English|
+|Entailment                              |BERT, XLNet, RoBERTa| Textual entailment is the task of classifying the binary relation between two natural-language texts,  *text* and *hypothesis*, to determine if the *text* agrees with the *hypothesis* or not. |English|
+|Question Answering                      |BiDAF, BERT, XLNet| Question answering (QA) is the task of retrieving or generating a valid answer for a given query in natural language, provided with a passage related to the query. |English|
+|Sentence Similarity                     |BERT, GenSen| Sentence similarity is the process of computing a similarity score given a pair of text documents. |English|
 |Embeddings| Word2Vec<br>fastText<br>GloVe| Embedding is the process of converting a word or a piece of text to a continuous vector space of real number, usually, in low dimension.|English|
-
+|Sentiment Analysis| Dependency Parser <br>GloVe| Provides an example of train and use Aspect Based Sentiment Analysis with Azure ML and [Intel NLP Architect](http://nlp_architect.nervanasys.com/absa.html) .|English|
 ## Getting Started
 While solving NLP problems, it is always good to start with the prebuilt [Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/directory/lang/). When the needs are beyond the bounds of the prebuilt cognitive service and when you want to search for custom machine learning methods,  you will find this repository  very useful. To get started, navigate to the [Setup Guide](SETUP.md), which lists instructions on how to setup your environment and dependencies.
 
@@ -63,7 +63,7 @@ While solving NLP problems, it is always good to start with the prebuilt [Cognit
 [Azure Machine Learning service](https://azure.microsoft.com/en-us/services/machine-learning-service/) is a cloud service used to train, deploy, automate, and manage machine learning models, all at the broad scale that the cloud provides. AzureML is presented in notebooks across different scenarios to enhance the efficiency of developing Natural Language systems at scale and for various AI model development related tasks like:
   * [**Accessing Datastores**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-access-data) to easily read and write your data in Azure storage services such as blob storage or file share.
   * Scaling up and out on [**Azure Machine Learning Compute**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-set-up-training-targets#amlcompute).
-  * [**Automated Machine Learning**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-configure-auto-train) which builds high quality machine learning models by automating model and hyperparameter selection.
+  * [**Automated Machine Learning**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-configure-auto-train) which builds high quality machine learning models by automating model and hyperparameter selection. AutoML explores BERT, BiLSTM, bag-of-words, and word embeddings on the user's dataset to handle text columns.
   * [**Tracking experiments and monitoring metrics**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-track-experiments) to enhance the model creation process.
   * [**Distributed Training**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-train-ml-models#distributed-training-and-custom-docker-images)
   * [**Hyperparameter tuning**](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-tune-hyperparameters)
@@ -80,11 +80,13 @@ The following is a list of related repositories that we like and think are usefu
 
 |||
 |---|---|
-|[pytorch-transformers](https://github.com/huggingface/pytorch-transformers)|A great PyTorch library from Hugging Face with implementations of popular transformer-based models. We've been using their package extensively in this repo and greatly appreciate their effort.|
+|[transformers](https://github.com/huggingface/transformers)|A great PyTorch library from Hugging Face with implementations of popular transformer-based models. We've been using their package extensively in this repo and greatly appreciate their effort.|
 |[Azure Machine Learning Notebooks](https://github.com/Azure/MachineLearningNotebooks/)|ML and deep learning examples with Azure Machine Learning.|
 |[AzureML-BERT](https://github.com/Microsoft/AzureML-BERT)|End-to-end recipes for pre-training and fine-tuning BERT using Azure Machine Learning service.|
 |[MASS](https://github.com/microsoft/MASS)|MASS: Masked Sequence to Sequence Pre-training for Language Generation.|
 |[MT-DNN](https://github.com/namisan/mt-dnn)|Multi-Task Deep Neural Networks for Natural Language Understanding.|
+|[UniLM](https://github.com/microsoft/unilm)|Unified Language Model Pre-training.|
+
 
 
 ## Build Status
